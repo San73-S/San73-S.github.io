@@ -1,0 +1,249 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.contenedor{
+    width: 100%;
+    height: 100vh;
+    
+    
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+
+    position: absolute;
+}
+
+/* Header */
+header{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #353a40e8;
+    color: white;
+    
+    align-items: center;
+}
+
+.logo{
+    display: flex;
+    
+    align-items: center;
+}
+
+.logo img{
+    width: 80px;
+}
+
+.logo a{
+    text-decoration: none;
+    color: white;
+}
+
+
+nav{   
+    display: flex;
+    gap: 20px;
+    
+}
+
+nav ul{
+    display: flex;
+    gap:10px;   
+    list-style: none;
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+
+header button{
+    color: #2ca744 ;
+    background-color: transparent;
+    border-style: none;
+}
+
+/* Footer */
+footer{
+    height: 60px;
+    background: rgba(30,83,114,1);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+
+footer a{
+    color: white;
+    text-decoration: none;
+
+    
+}
+
+
+/* Descuentos */
+.descuentos{
+    
+    height: 300px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    padding: 50px;
+    gap: 20px;
+    
+}
+
+.descuentos .estudiante{
+    background-color: white;
+    height: 250px;
+    width: 250px;
+    border: blue 2px solid;
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.descuentos .Trainee{
+    background-color: white;
+    height: 250px;
+    width: 250px;
+    border: rgb(3, 129, 39) 2px solid;
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.descuentos .Junior{
+    background-color: white;
+    height: 250px;
+    width: 250px;
+    border: rgb(213, 238, 16) 2px solid;
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.descuentos p,h4{
+    margin: 10px;
+}
+
+/* VENTA */
+
+.venta{
+    
+    height: 80px;
+    width: 100%;
+
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Datos */
+
+.datos{
+    
+    height: 400px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.datos form{
+   
+    height: 400px;
+    width: 80%;
+}
+
+.datos .nombreyapellido{
+    
+    height: 40px;
+    width: 100%;
+}
+
+.datos .nombreyapellido input{
+    width: 49.5%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px gray solid;
+}
+
+.datos input[type="email"]{
+    width: 99.5%;
+    height: 30px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px gray solid;
+}
+
+.datos .cantycat{
+    
+    height: 25px;
+    width: 100%;
+}
+
+.datos .cantycat label:nth-child(2){
+    margin-left: 46%;
+}
+
+.datos .categoria{
+    height: 40px;
+    width: 100%;
+}
+
+.datos .categoria input,select{
+    width: 49.5%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px gray solid;
+}
+
+.total{
+    width: 99.5%;
+    height: 30px;
+    background-color: rgb(98, 180, 248);
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+
+input[type="reset"], .boton{
+    width: 49.5%;
+    height: 30px;
+    margin-top: 10px;
+    background-color: #96c93e;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+input[type="reset"]:hover, .boton:hover{
+    border: 2px gray solid;
+}
+

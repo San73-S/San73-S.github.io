@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprar tickets</title>
+    <link rel="stylesheet" href="styleTickets.css">
+</head>
+<body>
+    <div class="contenedor">
+        <header>
+            <div class="logo">
+                <img src="images/codoacodo.png" alt="">
+                <p><a href="index.html">Conf Bs As</a></p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">La conferencia</a></li>
+                    <li><a href="index.html">Los oradores</a></li>
+                    <li><a href="index.html">El lugar y la fecha</a></li>
+                    <li><a href="index.html">Conviértete en orador</a></li>
+                </ul>
+                <button>Comprar tickets</button>
+            </nav>
+        </header>
+        <div class="descuentos">
+            <div class="estudiante">
+                <h4>Estudiante</h4>
+                <p>Tienen un descuento</p>
+                <h4>80%</h4>
+                <p>* presentar documentación</p>
+            </div>
+            <div class="Trainee">
+                <h4>Trainee</h4>
+                <p>Tienen un descuento</p>
+                <h4>50%</h4>
+                <p>* presentar documentación</p>
+            </div>
+            <div class="Junior">
+                <h4>Junior</h4>
+                <p>Tienen un descuento</p>
+                <h4>15%</h4>
+                <p>* presentar documentación</p>
+            </div>
+        </div>
+        <div class="venta">
+            <p>VENTA</p>
+            <h2>VALOR DE TICKET $200</h2>
+        </div>
+        <div class="datos">
+            <form action="">
+                <div class="nombreyapellido">
+                    <input type="text" placeholder="Nombre" id="nombre">
+                    <input type="text" placeholder="Apellido" id="apellido">
+                </div>
+                <input type="email" placeholder="Correo" id="correo">
+                <div class="cantycat">
+                    <label for="cantidad">Cantidad</label>
+                    <label for="categoria">Categoría</label>
+                </div>
+                <div class="categoria">
+                    <input type="number" id="cantidad" name="cantidad" placeholder="Cantidad">
+                    <select name="categoria" id="categoria">
+                        <option value="Estudiante">Estudiante</option>
+                        <option value="Trainee">Trainee</option>
+                        <option value="Junior">Junior</option>
+                    </select>
+                </div>
+                <div class="total"><p id="total">Total a Pagar: $</p></div>
+                <input type="reset" value="Borrar" onclick="borrarContenido()">
+                <button onclick="obtenerValores()" class="boton">Enviar</button>
+            </form>
+            
+        </div>
+
+
+        <footer>
+            <a href="#">Contáctanos</a>
+            <a href="#">Prensa</a>
+            <a href="#">Conferencias</a>
+            <a href="#">Términos y condiciones</a>
+            <a href="#">Privacidad</a>
+        </footer>
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,335 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.contenedor{
+    width: 100%;
+    height: 100vh;
+}
+
+header{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #353a40e8;
+    color: white;
+    
+    align-items: center;
+}
+
+.logo{
+    display: flex;
+    
+    align-items: center;
+}
+
+.logo img{
+    width: 80px;
+}
+
+
+
+nav{   
+    display: flex;
+    gap: 20px;
+    
+}
+
+nav ul{
+    display: flex;
+    gap:10px;   
+    list-style: none;
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+.carrousel{
+    height: 450px;
+    overflow: hidden;
+}
+
+.oradores{
+    height: 440px;
+    background-color: white;
+
+    display: block;
+    justify-content: center;
+    text-align: center;
+
+    padding: 10px;
+}
+
+.destino{
+    height: 300px;
+    
+
+    display: flex;
+}
+
+.tuCharla{
+    height: 360px;
+    display: block;
+    justify-content: center;
+    padding: 20px;
+}
+
+footer{
+    height: 60px;
+    background: rgba(30,83,114,1);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Header */
+header button{
+    color: #2ca744 ;
+    background-color: transparent;
+    border-style: none;
+}
+
+nav button a{
+    text-decoration: none;
+    color: #2ca744;
+}
+
+
+/* Carrousel */
+
+.itemCarrusel{
+    height: 100%;
+    position: relative;
+}
+.tarjetaCarrusel{
+    background-color: #17a2b7;
+    height: 100%;
+}
+.flechas{
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+#tarjetaCarrusel-1{
+    background-color: #db3545;
+}
+#tarjetaCarrusel-2{
+    background-color: #35db3d;
+}
+#tarjetaCarrusel-3{
+    background-color: #459fe4;
+}
+.carrousel a{
+    text-decoration: none;
+}
+
+.infoBsAs{
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    padding: 20px;
+    color: white;
+    justify-content: flex-end;
+    align-items: flex-end;
+    
+    left: 45%;
+    padding-bottom: 80px;
+}
+.infoBsAs p, button{
+    margin: 10px;
+    font-weight: bolder;
+    background-color: #353a406a;
+}
+.b1{
+    height: 30px;
+    background-color: #353a406a;
+    border-radius: 5px;
+    color: white;
+    padding: 8px;
+}
+.b2{
+    height: 30px;
+    border-radius: 5px;
+    color: white;
+    background-color: #2ca744 ;
+    border: none;
+    padding: 8px;
+}
+
+.carrousel button a{
+    color: white;
+}
+
+
+
+
+/* Oradores */
+.oradores .javascript{
+    display: inline-flex;
+    background-color: #fec106 ;
+    border-radius: 5px;
+}
+.oradores .react{
+    display: inline-flex;
+    background-color: #17a2b7;
+    border-radius: 5px;
+    font-size: 12px;
+}
+.oradores .negocios{
+    display: inline-flex;
+    background-color: #6b767c;
+    border-radius: 5px;
+}
+.oradores .startups{
+    display: inline-flex;
+    background-color: #db3545;
+    border-radius: 5px;
+    font-size: 12px;
+}
+ 
+.oradores .personas{
+    justify-content: center;
+
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    text-align: left;
+}
+.oradores .personas img{
+    width: 229px;
+    border-radius: 5px;
+}
+.oradores .personas .info{
+    padding: 10px;
+}
+
+.oradores .personas .Jobs{
+    height: 380px;
+    width: 230px;
+    border: 1px solid rgba(0, 0, 0, 0.356);
+    border-radius: 5px;
+    
+}
+
+.oradores .personas .Gates{
+    height: 380px;
+    width: 230px;
+    border: 1px solid rgba(0, 0, 0, 0.356);
+    border-radius: 5px;
+    
+}
+.oradores .personas .Lovelace{
+    height: 380px;
+    width: 230px;
+    border: 1px solid rgba(0, 0, 0, 0.356);
+    border-radius: 5px;
+}
+
+.oradores p:first-child{
+    font-size: 12px;
+}
+
+
+
+/* Destino */
+.destino .imagen{
+    height: 100%;
+    width: 50%;
+    
+}
+.destino .texto{
+    height: 100%;
+    width: 50%;
+    background-color: #353a40;
+    color: white;
+    padding: 15px;
+}
+.destino img{
+    height: 100%;
+    width: 99.7%;
+}
+.destino button{
+    background-color: transparent;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 15px;
+}
+.destino p{
+    margin-top: 10px;
+}
+.destino h3{
+    text-align: left;
+}
+
+
+
+
+/* Tu charla */
+.tuCharla textarea{
+    display: block;
+    width: 98.8%;
+    margin-top: 10px;
+}
+.tuCharla p, h3{
+    text-align: center;
+}
+.formulario{
+    
+    height: 230px;
+
+    display: flex;
+    justify-content: center;
+}
+form{
+    width: 50%;
+    
+}
+input{
+    width: 49%;
+    margin-top: 10px;
+}
+.tuCharla input[type="submit"]{
+    width: 98.8%;
+    background-color: #96c93e;
+    color: white;
+    border-radius: 5px;
+    height: 40px;
+    font-size: 18px;
+}
+.recordatorio{
+    color: #6b767c;
+}
+.tuCharla p:first-child{
+    font-size: 12px;
+}
+
+
+
+
+
+/* Footer */
+footer a{
+    color: white;
+    text-decoration: none;
+
+    
+}
