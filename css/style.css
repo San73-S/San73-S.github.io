@@ -1,0 +1,342 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/* main{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background-image: url(../images/fondo3.png);
+    background-size: cover;
+    background-position: bottom;
+    overflow: hidden;
+} */
+
+main{
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 100px 1fr 500px 1fr 100px;
+    grid-template-rows: 100px 1fr .7fr 1fr;
+
+    background-image: url(../images/fondo1.png);
+    background-size: cover;
+    background-position: bottom;
+    overflow: hidden;
+}
+
+.menu{
+    grid-column: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu img{
+    width: 45PX;
+    cursor: pointer;
+}
+
+
+.container-cartas-rival{
+    grid-column: 3/4;
+    grid-row: 2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+}
+
+.container-vidas-rival{
+    grid-column: 4/5;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    gap: 10px;
+}
+
+.container-vidas-rival p{
+    width: 220px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-bottom: 2px solid rgba(204, 199, 199, 0.45);
+}
+
+.icono-vida-rival, .icono-vida-propias{
+    width: 40px;
+} 
+
+.container-palo{
+    grid-column: 2/3;
+    grid-row: 3;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+
+.container-mazo{
+    grid-column: 3/4;
+    grid-row: 3;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+#carta-mazo{
+    width: 90px;
+    display: none;
+}
+
+.container-vidas-propias{
+    grid-column: 2/3;
+    grid-row: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.container-vidas-propias p{
+    width: 220px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-bottom: 2px solid rgba(204, 199, 199, 0.45);
+}
+
+.container-cartas-propias{
+    grid-column: 3/4;
+    grid-row: 4;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 15%;
+}
+
+.container-leyenda{
+    grid-column: 4/6;
+    grid-row: 4;
+    display: flex;
+    justify-content: start;
+    align-items: end;
+}
+
+.leyenda-fondo{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50px 100%);
+    background-color: rgba(0, 0, 0, 0.48);    
+}
+
+.container-leyenda p{
+    color: white;  
+    margin-left: 15px; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.cartas-rival{
+    display: inline;
+    position: absolute;   
+    width: 65px;
+    height: 115px;
+}
+
+.cartas-rival:first-child{
+    z-index: 10;
+    left: 29.5%;   
+    animation: mover-primer-carta-rival 3s ease-in-out forwards;
+}
+
+.cartas-rival:nth-child(2){
+    z-index: 20;
+    left: 37%;
+    animation: mover-segunda-carta-rival 2.5s ease-in-out forwards;
+}
+
+.cartas-rival:nth-child(3){
+    z-index: 30;
+}
+
+.cartas-rival:nth-child(4){
+    z-index: 40;
+    right: 37%;
+    animation: mover-cuarta-carta-rival 2.5s ease-in-out forwards;
+}
+
+.cartas-rival:last-child{
+    z-index: 50;
+    right: 29.5%;
+    animation: mover-quinta-carta-rival 3s ease-in-out forwards;
+}
+
+.cartas-propias{
+    display: inline;
+    position: absolute;   
+    width: 125px;
+    height: 200px;   
+}
+
+.cartas-propias img, .cartas-rival img{
+    width: 100%;    
+}
+
+.cartas-propias img{
+    border-radius: 5%;
+    box-shadow: -5px 7px 10px rgba(0, 0, 0, 0.5);
+}
+
+.cartas-propias:hover{
+    top: 0%;
+    z-index: 100;
+    scale: 1.05;
+    cursor: pointer;    
+}
+
+.cartas-propias:first-child{
+    z-index: 10;
+    left: 12.5%;   
+    animation: mover-primer-carta 3s ease-in-out forwards;    
+}
+
+.cartas-propias:nth-child(2){
+    z-index: 20;
+    left: 25%;
+    animation: mover-segunda-carta 2.5s ease-in-out forwards;
+}
+
+.cartas-propias:nth-child(3){
+    z-index: 30;
+}
+
+.cartas-propias:nth-child(4){
+    z-index: 40;
+    right: 25%;
+    animation: mover-cuarta-carta 2.5s ease-in-out forwards;
+}
+
+.cartas-propias:last-child{
+    z-index: 50;
+    right: 12.5%;
+    animation: mover-quinta-carta 3s ease-in-out forwards;
+}
+
+@keyframes mover-primer-carta {
+    0% {
+        transform: translateX(127px);
+    }
+    50%{
+        transform: translatex(-10px)
+    }
+    100% {  
+        transform-origin: right bottom;
+        transform: rotate(-10deg);        
+    }
+}
+
+@keyframes mover-segunda-carta {    
+    0% {
+        transform: translateX(64px);
+    }
+    75%{
+        transform: translatex(-10px)
+    }
+    100% {  
+        transform-origin: right bottom;
+        transform: rotate(-3deg);        
+    }
+}
+
+@keyframes mover-cuarta-carta {    
+    0% {
+        transform: translateX(-64px);
+    }
+    75%{
+        transform: translatex(10px)
+    }
+    100% {  
+        transform-origin: left bottom;
+        transform: rotate(3deg);        
+    }
+}
+
+@keyframes mover-quinta-carta {
+    0% {
+        transform: translateX(-127px);
+    }
+    50%{
+        transform: translatex(10px)
+    }
+    100% {  
+        transform-origin: left bottom;
+    transform: rotate(10deg);       
+    }
+}
+
+/*-------------------Animacion cartas rival----------------------------------------*/
+
+@keyframes mover-primer-carta-rival {
+    0% {
+        transform: translateX(70px);
+    }
+    50%{
+        transform: translatex(-10px)
+    }
+    100% {  
+        transform-origin: right bottom;
+        transform: rotate(-10deg);        
+    }
+}
+
+@keyframes mover-segunda-carta-rival {    
+    0% {
+        transform: translateX(34px);
+    }
+    75%{
+        transform: translatex(-10px)
+    }
+    100% {  
+        transform-origin: right bottom;
+        transform: rotate(-3deg);        
+    }
+}
+
+@keyframes mover-cuarta-carta-rival {    
+    0% {
+        transform: translateX(-40px);
+    }
+    75%{
+        transform: translatex(10px)
+    }
+    100% {  
+        transform-origin: left bottom;
+        transform: rotate(3deg);        
+    }
+}
+
+@keyframes mover-quinta-carta-rival  {
+    0% {
+        transform: translateX(-77px);
+    }
+    50%{
+        transform: translatex(10px)
+    }
+    100% {  
+        transform-origin: left bottom;
+    transform: rotate(10deg);       
+    }
+}
