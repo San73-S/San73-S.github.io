@@ -203,11 +203,52 @@ function comprobarRonda(){
     return rondaAux;
 }
 
+const textoMentir = document.getElementById("texto")
+
 document.addEventListener('keydown', function(event){
     const key = event.key;
     if(key === ' '){
 
-        cartaMazo.src = urlImgMazo; 
+        // VOZ DE LIAR
+
+        // EFECTO DE MENTIRA
+        gsap.fromTo(
+            textoMentir,
+            { scale: 0.5, opacity: 0 },
+            { 
+                scale: 12, 
+                opacity: 1,
+                duration: 2,
+                ease: "power3.out",
+                onComplete: () => {
+                gsap.to(textoMentir, {
+                    opacity: 0,
+                    duration: 1,
+                    delay: 1 
+                });
+            }
+            }
+        );
+
+
+        Swal.fire({
+            title: "¿Volver a jugar?",
+            confirmButtonText: "Si",
+            showCancelButton: true,
+            cancelButtonText: "No",
+            /*timer: 3000,*/
+            customClass:{
+                confirmButton: 'estilosBotonConf',
+                cancelButton: 'estilosBotonCan',
+                title:'estilosTitulo',
+                popup:'fondoReiniciar'
+            }
+        })
+        
+        setTimeout(()=>{
+            cartaMazo.src = urlImgMazo; // AGREGAR ACÁ EFEC ROTATIVO
+        }, 3500);  
+
         let rondaAux = comprobarRonda();
         let figuraEnMesa = cartaMazo.alt[0]
 
@@ -224,7 +265,7 @@ document.addEventListener('keydown', function(event){
                 reiniciarRonda();
             }
         
-        }, 3000);
+        }, 7000);
     }    
 })
 
@@ -233,9 +274,31 @@ document.addEventListener('keydown', function(event){
  */
 
 function esMentiraBot(){
+
+    gsap.fromTo(
+        textoMentir,
+        { scale: 0.5, opacity: 0 },
+        { 
+            scale: 12, 
+            opacity: 1,
+            duration: 2,
+            ease: "power3.out",
+            onComplete: () => {
+            gsap.to(textoMentir, {
+                opacity: 0,
+                duration: 1,
+                delay: 1 
+            });
+        }
+        }
+    );
+    
+    setTimeout(()=>{
+        cartaMazo.src = urlImgMazo; // AGREGAR ACÁ EFEC ROTATIVO
+    }, 3500); 
+
     let rondaAux = comprobarRonda();
     let figuraEnMesa = cartaMazo.alt[0];
-    cartaMazo.src = urlImgMazo; 
 
     setTimeout(() =>{
 
@@ -249,14 +312,13 @@ function esMentiraBot(){
             vidasPropiasImg[jugador1.vidas].src = "images/calavera.png"   
             reiniciarRonda();
         }  
-    }, 3000);    
+    }, 7000);    
 }
 
 
 /**
  *    FUNCION PARA RESETEAR MESA
  */
-
 
 function reiniciarRonda() {
     if(jugador1.vidas == 3) fondoMain.style.backgroundImage = "url('../images/fondo2.png')";

@@ -3,18 +3,6 @@
     margin: 0;
 }
 
-/* main{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    background-image: url(../images/fondo3.png);
-    background-size: cover;
-    background-position: bottom;
-    overflow: hidden;
-} */
-
 main{
     height: 100vh;
 
@@ -88,11 +76,29 @@ main{
     display: flex;
     justify-content: center;
     align-items: end;
+    position: relative;
 }
 
 #carta-mazo{
     width: 90px;
     display: none;
+    object-fit: cover;
+    z-index: 20;
+}
+
+#container-texto {
+    position: absolute; 
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    z-index: 30;
+}
+
+#container-texto h1{
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: white;
+    opacity: 0;
 }
 
 .container-vidas-propias{
@@ -339,4 +345,36 @@ main{
         transform-origin: left bottom;
     transform: rotate(10deg);       
     }
+}
+
+
+/*PROPIEDADES PARA CARTEL DE SWEET*/
+
+.estilosTitulo{
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.estilosBotonConf{
+    position: absolute;
+    padding: 10px 20px;
+}
+
+.estilosBotonCan{
+    position: absolute;
+    padding: 10px 20px;
+}
+
+
+.fondoReiniciar{
+    width: 50%;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url(../images/fondoReiniciar.png);
+    background-size: contain ;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
 }
