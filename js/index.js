@@ -229,21 +229,6 @@ document.addEventListener('keydown', function(event){
             }
             }
         );
-
-
-        Swal.fire({
-            title: "¿Volver a jugar?",
-            confirmButtonText: "Si",
-            showCancelButton: true,
-            cancelButtonText: "No",
-            /*timer: 3000,*/
-            customClass:{
-                confirmButton: 'estilosBotonConf',
-                cancelButton: 'estilosBotonCan',
-                title:'estilosTitulo',
-                popup:'fondoReiniciar'
-            }
-        })
         
         setTimeout(()=>{
             cartaMazo.src = urlImgMazo; // AGREGAR ACÁ EFEC ROTATIVO
@@ -345,7 +330,24 @@ function reiniciarRonda() {
     posicionesCartasBot = [0, 1, 2, 3, 4, 5];
 
     if(jugador1.vidas == 0 || jugador2.vidas == 0){
-        console.log("Hay que reiniciar vidas y acciones necesarias")
+        Swal.fire({
+            title: "¿Volver a jugar?",
+            confirmButtonText: "Si",
+            showCancelButton: true,
+            cancelButtonText: "No",
+            customClass:{
+                confirmButton:'estiloBotonSi',
+                cancelButton:'estiloBotonNo',
+                title:'estilosTitulo',
+                popup:'fondoReiniciar'
+            }
+        }).then((result) => {
+            if(!result.isConfirmed){
+                window.location.href = "../html/menu.html"
+            } else{
+                reiniciarJugadores();
+            }
+        })
     } 
 
     iniciarJuego();
@@ -367,4 +369,15 @@ function hacerVisibleCartas(i) {
 
     cartasRival[i].style.display = "inline";
     cartasRival[i].style.pointerEvents = "none";
+}
+
+function reiniciarJugadores(){
+    jugador1.vidas = 5;
+    jugador2.vidas = 5;
+
+    for(let i = 0; i < 5; i++){
+        vidasRivalImg[i].src = "images/calavera2.png"            
+        vidasPropiasImg[i].src = "images/calavera2.png" 
+    }
+
 }

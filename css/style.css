@@ -357,24 +357,36 @@ main{
     transform: translateX(-50%);
 }
 
-.estilosBotonConf{
-    position: absolute;
-    padding: 10px 20px;
+.estiloBotonSi{
+    position: relative;
+    right: 5px;
+    top: 30px;
 }
 
-.estilosBotonCan{
-    position: absolute;
-    padding: 10px 20px;
+.estiloBotonNo{
+    position: relative;
+    left: 5px;
+    top: 30px;
 }
-
 
 .fondoReiniciar{
     width: 50%;
-    height: 300px;
+    height: 250px;
     background-color: rgba(0, 0, 0, 0);
     background-image: url(../images/fondoReiniciar.png);
     background-size: contain ;
     background-repeat: no-repeat;
     background-position: center;
     color: white;
+}
+
+
+
+/*  ESTILOS MENÚ*/
+
+.main-menu{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
