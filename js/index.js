@@ -123,6 +123,7 @@ const vidasRivalImg = document.querySelectorAll(".icono-vida-rival")
 const cartaMazo = document.getElementById("carta-mazo");
 const fondoMain = document.getElementById("fondo-main");
 let urlImgMazo;
+let espacioFlag = false;
 let posicionesCartasBot = [0, 1, 2, 3, 4, 5];
 
 
@@ -134,9 +135,9 @@ function cartaBotAleatoria(){
 }
 
 cartasPropias.forEach((carta, index) =>{
-
-    carta.addEventListener('click', () => {
+    carta.addEventListener('click', () => {        
         if(jugador1.turno){
+            espacioFlag  = false;
             carta.style.display = "none";
             cartaMazo.style.display = "block";           
             const img = carta.querySelector('img');
@@ -170,8 +171,10 @@ cartasPropias.forEach((carta, index) =>{
                     jugador1.turno = true;
                     jugador2.turno = false;  
                 }
+                espacioFlag = true;
+            }, 3000 + (1000 * Math.floor(Math.random() * 2)+1));
 
-            }, 2000 * Math.floor(Math.random() * 2));
+            
         }
     });    
 });
@@ -180,6 +183,8 @@ cartasPropias.forEach((carta, index) =>{
 /**
  *  EVENTO PARA QUE EL USUARIO ACUSE DE MENTIRA
  */
+
+const voces = document.getElementById("audio");
 
 function comprobarRonda(){
     let rondaAux;
@@ -207,9 +212,11 @@ const textoMentir = document.getElementById("texto")
 
 document.addEventListener('keydown', function(event){
     const key = event.key;
-    if(key === ' '){
+    if(key === ' ' && espacioFlag){
 
         // VOZ DE LIAR
+        voces.src = "audio/liar.mp3";
+        voces.play();
 
         // EFECTO DE MENTIRA
         gsap.fromTo(
@@ -239,8 +246,7 @@ document.addEventListener('keydown', function(event){
 
         setTimeout(() =>{
 
-            if(rondaAux == figuraEnMesa){
-                // EJECUTAR FUNCION QUE SIRVA TMB PARA EL BOT            
+            if(rondaAux == figuraEnMesa){       
                 jugador1.vidas--;  
                 vidasPropiasImg[jugador1.vidas].src = "images/calavera.png"  
                 reiniciarRonda();
@@ -259,6 +265,9 @@ document.addEventListener('keydown', function(event){
  */
 
 function esMentiraBot(){
+
+    voces.src = "audio/liarBot.mp3";
+    voces.play();
 
     gsap.fromTo(
         textoMentir,
@@ -287,8 +296,7 @@ function esMentiraBot(){
 
     setTimeout(() =>{
 
-        if(rondaAux == figuraEnMesa){
-            // EJECUTAR FUNCION QUE SIRVA TMB PARA EL BOT        
+        if(rondaAux == figuraEnMesa){     
             jugador2.vidas--; 
             vidasRivalImg[jugador2.vidas].src = "images/calavera.png"
             reiniciarRonda();
@@ -312,6 +320,7 @@ function reiniciarRonda() {
     jugador1.turno = true;
     jugador1.cartasDisponibles = 5;
     jugador2.turno = false;
+    espacioFlag = false;
     cartaMazo.src = "";
     cartaMazo.alt = "";
     cartaMazo.style.display = "none";
