@@ -98,6 +98,7 @@ main{
     font-size: 10px;
     letter-spacing: 5px;
     color: white;
+    text-shadow: 1px 0px 0 black;
     opacity: 0;
 }
 

@@ -74,6 +74,7 @@ function buscarEnApi(carta, callback) {
 }
 
 /*PONER SOBRE LA MESA LA CARTA DE LA FIGURA QUE TOCO */
+let audioSelec;
 
 const cartaEnMesa = document.getElementById("figura");
 
@@ -81,18 +82,23 @@ function figuraEnMesa(){
     switch (ronda){
         case "As":
             cartaEnMesa.src = "images/As.png";
+            audioSelec = "as"
             break;
         case "Ten":
             cartaEnMesa.src = "images/Ten.png";
+            audioSelec = "ten"
             break;
         case "Jack":
             cartaEnMesa.src = "images/Jack.png";
+            audioSelec = "jack"
             break;
         case "Queen":
             cartaEnMesa.src = "images/Queen.png";
+            audioSelec = "queen"
             break;
         case "King":
             cartaEnMesa.src = "images/King.png";
+            audioSelec = "king"
             break;            
     }
 }
@@ -123,7 +129,7 @@ const vidasRivalImg = document.querySelectorAll(".icono-vida-rival")
 const cartaMazo = document.getElementById("carta-mazo");
 const fondoMain = document.getElementById("fondo-main");
 let urlImgMazo;
-let espacioFlag = false;
+let espacioFlag = false; // EVITA QUE SE PUEDA TOCAR ESPACIO CUANDO NO ES TU TURNO O NO HAY CARTAS EN LA MESA
 let posicionesCartasBot = [0, 1, 2, 3, 4, 5];
 
 
@@ -137,7 +143,12 @@ function cartaBotAleatoria(){
 cartasPropias.forEach((carta, index) =>{
     carta.addEventListener('click', () => {        
         if(jugador1.turno){
+
+            voces.src = `audio/one ${audioSelec}.mp3`;
+            voces.play();
+
             espacioFlag  = false;
+
             carta.style.display = "none";
             cartaMazo.style.display = "block";           
             const img = carta.querySelector('img');
@@ -159,6 +170,9 @@ cartasPropias.forEach((carta, index) =>{
                     esMentiraBot();
                 } else{
                     cartasRival[numAux].click();
+                    
+                    voces.src = `audio/one ${audioSelec} bot.mp3`;
+                    voces.play();
                     cartasRival[numAux].style.display = "none";
                     cartaMazo.src="images/Reverso2.png"; //Hacer varios diseños y modificar el reverso 2-3-4-5 con ´´ USAR CONTADOR de cartas tiradas
                     const img = cartasRival[numAux].querySelector('img');
