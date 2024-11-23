@@ -229,7 +229,7 @@ document.addEventListener('keydown', function(event){
     if(key === ' ' && espacioFlag){
 
         // VOZ DE LIAR
-        voces.src = "audio/liar.mp3";
+        voces.src = jugador2.vidas == 1 ? "audio/ja liar.mp3" : "audio/liar.mp3";
         voces.play();
 
         // EFECTO DE MENTIRA
@@ -253,7 +253,15 @@ document.addEventListener('keydown', function(event){
         
         setTimeout(()=>{
             cartaMazo.src = urlImgMazo; // AGREGAR ACÁ EFEC ROTATIVO
-        }, 3500);  
+            cartaMazo.style.zIndex = 40;
+            cartaMazo.classList.add('levantar');
+        }, 3500); 
+
+        setTimeout(()=>{
+            cartaMazo.classList.remove('levantar');
+            cartaMazo.classList.add('rotar');
+        }, 6500)        
+        
 
         let rondaAux = comprobarRonda();
         let figuraEnMesa = cartaMazo.alt[0]
@@ -270,7 +278,7 @@ document.addEventListener('keydown', function(event){
                 reiniciarRonda();
             }
         
-        }, 7000);
+        }, 10000);
     }    
 })
 
@@ -280,7 +288,7 @@ document.addEventListener('keydown', function(event){
 
 function esMentiraBot(){
 
-    voces.src = "audio/liarBot.mp3";
+    voces.src = jugador1.vidas == 1 ? "audio/ja liar bot.mp3" : "audio/liarBot.mp3";
     voces.play();
 
     gsap.fromTo(
@@ -303,7 +311,14 @@ function esMentiraBot(){
     
     setTimeout(()=>{
         cartaMazo.src = urlImgMazo; // AGREGAR ACÁ EFEC ROTATIVO
+        cartaMazo.style.zIndex = 40;
+        cartaMazo.classList.add('levantar');
     }, 3500); 
+
+    setTimeout(()=>{
+        cartaMazo.classList.remove('levantar');
+        cartaMazo.classList.add('rotar');
+    }, 6500)  
 
     let rondaAux = comprobarRonda();
     let figuraEnMesa = cartaMazo.alt[0];
@@ -319,7 +334,7 @@ function esMentiraBot(){
             vidasPropiasImg[jugador1.vidas].src = "images/calavera.png"   
             reiniciarRonda();
         }  
-    }, 7000);    
+    }, 10000);    
 }
 
 
@@ -335,6 +350,8 @@ function reiniciarRonda() {
     jugador1.cartasDisponibles = 5;
     jugador2.turno = false;
     espacioFlag = false;
+    cartaMazo.classList.remove('rotar');
+    cartaMazo.style.zIndex = 20;
     cartaMazo.src = "";
     cartaMazo.alt = "";
     cartaMazo.style.display = "none";

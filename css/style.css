@@ -86,6 +86,16 @@ main{
     z-index: 20;
 }
 
+.levantar{
+    transform: rotateX(90deg); 
+    animation: levantar 2s ease-out forwards;
+}
+
+.rotar{
+    animation: rotarY 2.5s ease-out forwards;
+}
+
+
 #container-texto {
     position: absolute; 
     top: 50%;
@@ -242,6 +252,9 @@ main{
     animation: mover-quinta-carta 3s ease-in-out forwards;
 }
 
+
+/*ANIMACION DE ABANICO DE CARTAS*/
+
 @keyframes mover-primer-carta {
     0% {
         transform: translateX(127px);
@@ -348,6 +361,27 @@ main{
     }
 }
 
+/*     ANIMACION DE MOSTRAR CARTA DEL MAZO       */
+@keyframes levantar {
+    0% {
+        transform: rotateX(90deg); 
+    }
+    50% {
+        transform: rotateX(45deg); 
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+@keyframes rotarY {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
 
 /*PROPIEDADES PARA CARTEL DE SWEET*/
 
