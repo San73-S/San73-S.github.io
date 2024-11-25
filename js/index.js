@@ -19,20 +19,20 @@ jugar.addEventListener('click', () => {
     }, 3000);
 
     setTimeout( ()=>{        
-        comenzar.style.display = "inline";        
-    }, 10000);
+        comenzar.style.opacity = 1;        
+    }, 13000);
 });
 
 comoJugar.addEventListener('click', ()=>{
     contenedorBtn.style.display = "none";
     instrucciones.style.display = "flex";
-    instrucciones.style.animation = "zoomInsAbrir 2s linear forwards";
+    instrucciones.style.animation = "zoomInsAbrir 1s linear forwards";
 });
 
 cerrar.addEventListener('click', ()=>{    
-    instrucciones.style.animation = "zoomInsCerrar 2s linear forwards";
+    instrucciones.style.animation = "zoomInsCerrar 1s linear forwards";
     setTimeout(()=>{
         instrucciones.style.display = "none";
         contenedorBtn.style.display = "inline";
-    },2000)
+    },1000)
 });
