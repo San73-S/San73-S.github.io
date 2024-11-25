@@ -443,3 +443,5 @@ opc.addEventListener('click', () =>{
     })
 })
 
+const amb = document.getElementById("ambiente");
+amb.volume = 0.8;
