@@ -421,3 +421,25 @@ function reiniciarJugadores(){
     }
 
 }
+
+const opc = document.getElementById("opciones");
+
+opc.addEventListener('click', () =>{
+    Swal.fire({
+        title: "¿Quiere volver al menu principal?",
+        confirmButtonText: "Si",
+        showCancelButton: true,
+        cancelButtonText: "No",
+        customClass:{
+            confirmButton:'estiloBotonSi2',
+            cancelButton:'estiloBotonNo2',
+            title:'estilosTitulo',
+            popup:'fondoReiniciar'
+        }
+    }).then((result) => {
+        if(result.isConfirmed){
+            window.location.href = "../index.html"
+        }
+    })
+})
+

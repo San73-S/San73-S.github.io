@@ -612,6 +612,14 @@
     }
 }
 
+
+
+
+
+
+
+
+
 /*PROPIEDADES PARA CARTEL DE SWEET*/
 
 .estilosTitulo{
@@ -631,6 +639,18 @@
     position: relative;
     left: 5px;
     top: 30px;
+}
+
+.estiloBotonSi2{
+    position: relative;
+    right: 5px;
+    top: 55px;
+}
+
+.estiloBotonNo2{
+    position: relative;
+    left: 5px;
+    top: 55px;
 }
 
 .fondoReiniciar{
