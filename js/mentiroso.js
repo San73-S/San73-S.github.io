@@ -341,10 +341,14 @@ function esMentiraBot(){
 /**
  *    FUNCION PARA RESETEAR MESA
  */
+let ganador;
 
 function reiniciarRonda() {
     if(jugador1.vidas == 3) fondoMain.style.backgroundImage = "url('../images/fondo2.png')";
     if(jugador1.vidas == 1) fondoMain.style.backgroundImage = "url('../images/fondo3.png')";
+
+    if(jugador1.vidas > 0 && jugador2.vidas == 0) ganador = "Ganaste!";
+    if(jugador1.vidas == 0 && jugador2.vidas > 0) ganador = "Perdiste!";
 
     jugador1.turno = true;
     jugador1.cartasDisponibles = 5;
@@ -371,7 +375,7 @@ function reiniciarRonda() {
 
     if(jugador1.vidas == 0 || jugador2.vidas == 0){
         Swal.fire({
-            title: "¿Volver a jugar?",
+            title: `${ganador}\n¿Volver a jugar?`,
             confirmButtonText: "Si",
             showCancelButton: true,
             cancelButtonText: "No",

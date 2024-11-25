@@ -624,7 +624,7 @@
 
 .estilosTitulo{
     position: absolute;
-    top: 50px;
+    top: 30px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -632,13 +632,13 @@
 .estiloBotonSi{
     position: relative;
     right: 5px;
-    top: 30px;
+    top: 40px;
 }
 
 .estiloBotonNo{
     position: relative;
     left: 5px;
-    top: 30px;
+    top: 40px;
 }
 
 .estiloBotonSi2{
