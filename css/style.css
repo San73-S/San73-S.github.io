@@ -1,9 +1,199 @@
+.uncial-antiqua-regular {
+    font-family: "Uncial Antiqua", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}  
+
+
 *{
     padding: 0;
     margin: 0;
 }
 
-main{
+.main-menu{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: #0b0b1b;
+    overflow: hidden;
+}
+
+.fondo{
+    width: 90%;
+    background-image: url("../images/menuFondo1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: center center;
+}
+
+
+.botones-menu{
+    margin-left:49px;
+    width: 218px;
+}
+
+.fondo-btn{
+    height: 35px;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fondo-btn a{
+    text-decoration: none;
+    color: #b0b0b0;
+    font-family: "Uncial Antiqua", system-ui;
+    position: relative;
+    z-index: 20;
+}
+
+.fondo-btn a:hover{
+    scale: 1.1;
+}
+
+.instrucciones{
+    width: 290px;
+    padding: 15px;
+    border-radius: 15px;
+    z-index: 50;
+    margin-left:49px;
+    background-color: #0b0b1b75;      
+    color: #b0b0b0;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;  
+    position: absolute;   
+    border: 1px solid #79797979;
+    box-shadow: 0px 0px 100px #000000;
+    animation: zoomInsAbrir 2s ease-in forwards;
+}
+
+#cerrar{
+    align-self: flex-end;
+}
+
+#cerrar img{
+    width: 35px;
+    cursor: pointer;
+}
+
+@keyframes zoomCentro{
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        transform-origin: center center;
+    }
+    100% {
+        transform: scale(3);
+        opacity: 0;
+        transform-origin: center center;
+    }
+}
+
+@keyframes zoomInsAbrir{
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+        transform-origin: center center;
+    }
+    100% {
+        transform: scale(1.3);
+        opacity: 1;
+        transform-origin: center center;
+    }
+}
+
+@keyframes zoomInsCerrar{
+    0% {
+        transform: scale(1.3);
+        opacity: 1;
+        transform-origin: center center;
+    }
+    100% {
+        transform: scale(0.5);
+        opacity: 0;
+        transform-origin: center center;
+    }
+}
+
+.zoom{
+    animation: zoomCentro 3s ease-in-out forwards;
+}
+
+.pantalla-carga{
+    display: none;
+    width: 90%;
+    height: 55vh;
+    position: absolute;
+    z-index: 5;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pantalla-carga button{
+    width: 150px;
+    height: 40px;
+    display: none;
+    background-color: #b0b0b0;
+    border: none;
+    border-radius: 5px;
+}
+
+.pantalla-carga button a{
+    font-size: 20px;
+    text-decoration: none;
+    color: #0b0b1b;
+    padding: 10px 29px;
+    margin-left: -6px;
+}
+
+.pantalla-carga button:hover{
+    border: 1px solid #b0b0b0;
+    background-color: #0b0b1b;
+}
+
+.pantalla-carga button a:hover{
+    color: #b0b0b0;
+    opacity: 1;
+}
+
+.pantalla-carga img{
+    width: 100px;
+    animation: girar 6s linear infinite;   
+    animation-delay: 1s; 
+}
+
+.pantalla-carga p{
+    font-size: 20px;
+    color: #b0b0b0;
+    font-family: "Uncial Antiqua", system-ui;
+    margin-bottom: 50px;
+}
+
+@keyframes girar {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/*ESTILOS PAGINA DEL JUEGO*/
+
+
+#fondo-main{
     height: 100vh;
 
     display: grid;
@@ -413,15 +603,4 @@ main{
     background-repeat: no-repeat;
     background-position: center;
     color: white;
-}
-
-
-
-/*  ESTILOS MENÚ*/
-
-.main-menu{
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
