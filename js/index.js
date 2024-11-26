@@ -40,6 +40,8 @@ comoJugar.addEventListener('click', ()=>{
     efecto.src = `audio/whoosh1.mp3`;
     efecto.play();
     instrucciones.style.animation = "zoomInsAbrir 1s linear forwards";    
+    amb.play();
+    amb.loop = true;
 });
 
 cerrar.addEventListener('click', ()=>{    
@@ -61,9 +63,7 @@ jugar.addEventListener('mouseover', ()=>{
 comoJugar.addEventListener('mouseover', ()=>{
     efecto.src = `audio/hover.mp3`;
     efecto.play();
-    efecto.volume = 0.7;
-    amb.play();
-    amb.loop = true;
+    efecto.volume = 0.7;    
 })
 
 botonFormulario.addEventListener('mouseover', ()=>{
