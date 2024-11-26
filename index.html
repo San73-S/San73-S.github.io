@@ -7,6 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="icon" href="../images/icon.ico" type="image/x-icon">
     <title>Mentiroso - Menú</title>
 </head>
@@ -14,36 +18,45 @@
     <main id="main" class="main-menu">
         <div id="fondoNuevo" class="fondo">
             <div id="botones" class="botones-menu">
-                <div class="fondo-btn">
+                <div id="btn-jugar" class="fondo-btn">
                     <a id="jugar" href="#">Jugar</a>
                 </div>
-                <div class="fondo-btn">                   
-                    <a id="como-jugar" href="#">¿Cómo se juga?</a>
+                <div id="btn-contrato" class="fondo-btn">                   
+                    <a id="como-jugar" href="#">Ver contrato</a>
                 </div>                
             </div>  
             <div id="instructivo" class="instrucciones">
-                <div id="cerrar"><img src="images/cerrar.png" alt=""></div>
-                <div><p>Instructivo</p></div>
+                <div id="cerrar">
+                    <p>Contrato</p>
+                    <img src="images/cerrar.png" alt="">
+                </div>
                 <div><p>En este juego de cartas 1vs1, solo sobrevivirá uno. <br>El objetivo del juego es descubrir si tu oponente está mintiendo. <br>Ya que deberan tirar cartas de la figura que toque en la ronda. <br>Pero ojo! que no siempre tendrán cartas de la figura seleccionada para tirar. 
                 <br>Que no te atrapen mintiendo, o <i>perderás</i> una de tus vidas... o quizás, <i>tu vida</i>  literalmente.</p>
                 <p class="msj"><br>Pulsa <i>'Espacio'</i> para acusar a tu oponente de <i>Mentiroso</i>.</p>
-            </div>
+                </div>
+                <div>
+                    <form action="">
+                        <input id="nombre-jugador" type="text" placeholder="Santos">
+                        <button id="btn-form" >Firmar</button>
+                    </form>
+                </div>
             </div>          
         </div>
 
         <div id="carga" class="pantalla-carga">
             <img src="images/tambo2.gif" alt="">
             
-            <p>- Debes estar muy necesitado de dinero para presentarte aquí. ¿Ya leíste las reglas? <br>No te puedo dejar salir si no ganas. Pero, si lo logras, la recompensa será tuya. <br>Solo tendrás que <i>ocuparte</i> de ella...</p>
+            <p>- Debes estar muy necesitado de dinero para presentarte aquí. ¿Ya leíste el contrato? <br>No te puedo dejar salir si no ganas. Pero, si lo logras, la recompensa será tuya. <br>Solo tendrás que <i>ocuparte</i> de ella...</p>
 
             <button id="comenzar"><a href="html/mentiroso.html">+ Sí, estoy listo.</a></button>
         </div>
         
     </main>
     <audio id="efectos-sonido" src=""></audio>
-    <audio id="ambiente" loop autoplay>
+    <audio id="ambiente" src="audio/ambiente1.mp3"></audio>
+    <!-- <audio id="ambiente" loop autoplay muted>
         <source src="audio/ambiente1.mp3 " type="audio/mpeg">
-    </audio> 
+    </audio>  -->
     <script src="js/index.js" ></script>
 </body>
 </html>

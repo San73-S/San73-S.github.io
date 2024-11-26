@@ -1,3 +1,11 @@
+let nombreJugador;
+const contenedorNombreJugador = document.getElementById("nombre-jugador")
+
+document.addEventListener('DOMContentLoaded', function() {
+    const nombreJugador = localStorage.getItem("nombreUsuario");
+    contenedorNombreJugador.textContent = nombreJugador;
+});
+
 class Jugador{
 
     constructor(id, nombre, vidas, turno, cartasDisponibles){
@@ -107,7 +115,7 @@ function figuraEnMesa(){
  *  CONTROLADOR PARA INICIAR LA PARTIDA
  */
 
-let jugador1 = new Jugador(1, "Santiago", 5, true, 5);
+let jugador1 = new Jugador(1, nombreJugador, 5, true, 5);
 let jugador2 = new Jugador(2, "Bot", 5, false, 5); 
 
 function iniciarJuego(){  

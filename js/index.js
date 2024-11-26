@@ -9,8 +9,15 @@ const instrucciones = document.getElementById("instructivo");
 const cerrar = document.getElementById("cerrar");
 const amb = document.getElementById("ambiente");
 const efecto = document.getElementById("efectos-sonido");
-amb.volume = 0.8;
+const botonFormulario = document.getElementById("btn-form");
+const nombre = document.getElementById("nombre-jugador");
+const btnJugar = document.getElementById("btn-jugar");
+const btnContrato = document.getElementById("btn-contrato");
 
+window.onload = function() {
+    amb.play();
+    amb.loop = true;    
+}
 
 jugar.addEventListener('click', () => {
     contenedorBtn.style.display = "none";
@@ -50,8 +57,6 @@ cerrar.addEventListener('click', ()=>{
     },1000)
 });
 
-
-
 jugar.addEventListener('mouseover', ()=>{
     efecto.src = `audio/hover.mp3`;
     efecto.play();
@@ -62,4 +67,25 @@ comoJugar.addEventListener('mouseover', ()=>{
     efecto.src = `audio/hover.mp3`;
     efecto.play();
     efecto.volume = 0.7;
+})
+
+botonFormulario.addEventListener('mouseover', ()=>{
+    efecto.src = `audio/hover.mp3`;
+    efecto.play();
+    efecto.volume = 0.7;
+})
+
+botonFormulario.addEventListener('click', () =>{    
+    event.preventDefault();
+
+    if(nombre.value.trim() === ""){
+        nombre.classList.add('incompleto');
+        return;
+    }
+
+    localStorage.setItem("nombreUsuario", nombre.value);
+    nombre.classList.remove('incompleto');
+    cerrar.click();
+    btnJugar.style.display = "flex";
+    btnContrato.style.display = "none";
 })
