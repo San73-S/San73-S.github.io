@@ -139,6 +139,7 @@ const fondoMain = document.getElementById("fondo-main");
 let urlImgMazo;
 let espacioFlag = false; // EVITA QUE SE PUEDA TOCAR ESPACIO CUANDO NO ES TU TURNO O NO HAY CARTAS EN LA MESA
 let posicionesCartasBot = [0, 1, 2, 3, 4, 5];
+let cont = 1;
 
 
 function cartaBotAleatoria(){
@@ -161,11 +162,12 @@ cartasPropias.forEach((carta, index) =>{
             cartaMazo.style.display = "block";           
             const img = carta.querySelector('img');
             urlImgMazo = img.src;
-            cartaMazo.src="../images/Reverso.png";
+            cartaMazo.src=`../images/Reverso${cont}.png`;
             cartaMazo.alt = img.alt;
             jugador1.turno = false;
             jugador1.cartasDisponibles--;
             jugador2.turno = true;
+            cont++;
         }   
         
         if(jugador2){  
@@ -182,7 +184,8 @@ cartasPropias.forEach((carta, index) =>{
                     voces.src = `../audio/one ${audioSelec} bot.mp3`;
                     voces.play();
                     cartasRival[numAux].style.display = "none";
-                    cartaMazo.src="../images/Reverso2.png"; //Hacer varios diseños y modificar el reverso 2-3-4-5 con ´´ USAR CONTADOR de cartas tiradas
+                    cartaMazo.src=`../images/Reverso${cont}.png`; 
+                    cont++;
                     const img = cartasRival[numAux].querySelector('img');
     
                     buscarEnApi(img.alt, (dato) => {
@@ -260,7 +263,7 @@ document.addEventListener('keydown', function(event){
         );
         
         setTimeout(()=>{
-            cartaMazo.src = urlImgMazo; // AGREGAR ACÁ EFEC ROTATIVO
+            cartaMazo.src = urlImgMazo;
             cartaMazo.style.zIndex = 40;
             cartaMazo.classList.add('levantar');
         }, 3500); 
@@ -357,6 +360,7 @@ function reiniciarRonda() {
 
     if(jugador1.vidas > 0 && jugador2.vidas == 0) ganador = "Ganaste!";
     if(jugador1.vidas == 0 && jugador2.vidas > 0) ganador = "Perdiste!";
+    cont = 1;
 
     jugador1.turno = true;
     jugador1.cartasDisponibles = 5;
