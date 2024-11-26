@@ -57,7 +57,7 @@
     display: none;
 }
 
-.fondo-btn a{
+.fondo-btn p{
     text-decoration: none;
     color: #c5c5c5;
     font-size: 18px;
@@ -66,7 +66,7 @@
     z-index: 20;
 }
 
-.fondo-btn a:hover{
+.fondo-btn p:hover{
     scale: 1.1;
 }
 
