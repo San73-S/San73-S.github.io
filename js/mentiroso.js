@@ -435,7 +435,7 @@ function reiniciarJugadores(){
         vidasRivalImg[i].src = "../images/calavera2.avif"            
         vidasPropiasImg[i].src = "../images/calavera2.avif" 
     }
-
+    fondoMain.style.backgroundImage = "url('../images/fondo1.avif')";
 }
 
 const opc = document.getElementById("opciones");
