@@ -13,10 +13,13 @@ const botonFormulario = document.getElementById("btn-form");
 const nombre = document.getElementById("nombre-jugador");
 const btnJugar = document.getElementById("btn-jugar");
 const btnContrato = document.getElementById("btn-contrato");
+const btnLinkedin = document.getElementById("linkedin-btn");
+const btnGit = document.getElementById("github-btn");
+
 
 jugar.addEventListener('click', () => {
     contenedorBtn.style.display = "none";
-    fondo.style.backgroundImage = 'url("images/menuFondo2.png")';
+    fondo.style.backgroundImage = 'url("images/menuFondo2.avif")';
     fondo.classList.add("zoom");
     efecto.src = `audio/whoosh2.mp3`;
     efecto.play();
@@ -72,7 +75,19 @@ botonFormulario.addEventListener('mouseover', ()=>{
     efecto.volume = 0.7;
 })
 
-botonFormulario.addEventListener('click', () =>{    
+btnLinkedin.addEventListener('mouseover', ()=>{
+    efecto.src = `audio/hover.mp3`;
+    efecto.play();
+    efecto.volume = 0.7;
+})
+
+btnGit.addEventListener('mouseover', ()=> {
+    efecto.src = `audio/hover.mp3`;
+    efecto.play();
+    efecto.volume = 0.7;
+})
+
+botonFormulario.addEventListener('click', ()=>{    
     event.preventDefault();
 
     if(nombre.value.trim() === ""){

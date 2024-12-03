@@ -28,7 +28,7 @@
 
 .fondo{
     width: 90%;
-    background-image: url("../images/menuFondo1.png");
+    background-image: url("../images/menuFondo1.avif");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;  
@@ -64,6 +64,20 @@
     font-family: "Uncial Antiqua", system-ui;
     position: relative;
     z-index: 20;
+}
+
+.redes-btn{
+    height: 40px; 
+    gap: 20px;
+}
+
+.fondo-btn img{
+    margin-top: 3px;
+    width: 30px;
+}
+
+.fondo-btn img:hover{
+    scale: 1.1;
 }
 
 .fondo-btn p:hover{

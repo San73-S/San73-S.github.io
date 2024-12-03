@@ -281,11 +281,11 @@ document.addEventListener('keydown', function(event){
 
             if(rondaAux == figuraEnMesa){       
                 jugador1.vidas--;  
-                vidasPropiasImg[jugador1.vidas].src = "../images/calavera.png"  
+                vidasPropiasImg[jugador1.vidas].src = "../images/calavera.avif"  
                 reiniciarRonda();
-            } else{     // HACER QUE GIRE PARA REVELAR LA CARTA QUE SALIO , PONER TIMER
+            } else{     
                 jugador2.vidas--; 
-                vidasRivalImg[jugador2.vidas].src = "../images/calavera.png"  
+                vidasRivalImg[jugador2.vidas].src = "../images/calavera.avif"  
                 reiniciarRonda();
             }
         
@@ -338,11 +338,11 @@ function esMentiraBot(){
 
         if(rondaAux == figuraEnMesa){     
             jugador2.vidas--; 
-            vidasRivalImg[jugador2.vidas].src = "../images/calavera.png"
+            vidasRivalImg[jugador2.vidas].src = "../images/calavera.avif"
             reiniciarRonda();
         } else{  
             jugador1.vidas--;  
-            vidasPropiasImg[jugador1.vidas].src = "../images/calavera.png"   
+            vidasPropiasImg[jugador1.vidas].src = "../images/calavera.avif"   
             reiniciarRonda();
         }  
     }, 10000);    
@@ -355,8 +355,8 @@ function esMentiraBot(){
 let ganador;
 
 function reiniciarRonda() {
-    if(jugador1.vidas == 3) fondoMain.style.backgroundImage = "url('../images/fondo2.png')";
-    if(jugador1.vidas == 1) fondoMain.style.backgroundImage = "url('../images/fondo3.png')";
+    if(jugador1.vidas == 3) fondoMain.style.backgroundImage = "url('../images/fondo2.avif')";
+    if(jugador1.vidas == 1) fondoMain.style.backgroundImage = "url('../images/fondo3.avif')";
 
     if(jugador1.vidas > 0 && jugador2.vidas == 0) ganador = "Ganaste!";
     if(jugador1.vidas == 0 && jugador2.vidas > 0) ganador = "Perdiste!";
@@ -432,8 +432,8 @@ function reiniciarJugadores(){
     jugador2.vidas = 5;
 
     for(let i = 0; i < 5; i++){
-        vidasRivalImg[i].src = "../images/calavera2.png"            
-        vidasPropiasImg[i].src = "../images/calavera2.png" 
+        vidasRivalImg[i].src = "../images/calavera2.avif"            
+        vidasPropiasImg[i].src = "../images/calavera2.avif" 
     }
 
 }
